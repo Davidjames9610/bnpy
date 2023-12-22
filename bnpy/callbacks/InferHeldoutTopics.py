@@ -154,7 +154,7 @@ def evalTopicModelOnTestDataFromTaskpath(
                 etime = time.time() - stime
                 msg = "%5d/%d after %8.1f sec " % (d+1, Data.nDoc, etime)
                 printFunc(msg + scoreMsg)
-    # Aggregate results
+    # Aggregate synthetic_results
     meanlogpTokensPerDoc = np.sum(logpTokensPerDoc) / np.sum(nTokensPerDoc)
     '''
     # Compute heldout Lscore
@@ -191,7 +191,7 @@ def evalTopicModelOnTestDataFromTaskpath(
         SVars['hdpLscore'] = hdpLscore
         printFunc("~~~ dpL=%.6e\n~~~hdpL=%.6e" % (dpLscore, hdpLscore))
     '''
-    # Prepare to save results.
+    # Prepare to save synthetic_results.
     if dataSplitName.count('test'):
         outfileprefix = 'predlik-'
     else:
@@ -251,9 +251,9 @@ def evalTopicModelOnTestDataFromTaskpath(
             f.write("%.6e\n" % (SVars[key]))
     if printFunc:
         printFunc("DONE with heldout inference at lap %.3f" % queryLap)
-        printFunc("Wrote per-doc results in MAT file:" +
+        printFunc("Wrote per-doc synthetic_results in MAT file:" +
             outmatfile.split(os.path.sep)[-1])
-        printFunc("      Aggregate results in txt files: %s__.txt"
+        printFunc("      Aggregate synthetic_results in txt files: %s__.txt"
             % (outfileprefix))
 
     # Write the summary message

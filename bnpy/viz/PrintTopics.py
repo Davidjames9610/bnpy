@@ -47,7 +47,7 @@ tr { page-break-inside:avoid; page-break-after:auto }
 
 def showTopWordsForTask(taskpath, vocabfile, lap=None, doHTML=1,
                         doCounts=1, sortTopics=False, **kwargs):
-    ''' Print top words for each topic from results saved on disk.
+    ''' Print top words for each topic from synthetic_results saved on disk.
 
     Returns
     -------

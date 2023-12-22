@@ -20,7 +20,7 @@ class GroupXData(XData):
     GroupXData can represent situations like:
     * obseved image patches, across many images
         group=image, observation=patch
-    * observed test results for patients, across many hospitals
+    * observed test synthetic_results for patients, across many hospitals
         group=hospital, obsevation=patient test result
 
     Attributes

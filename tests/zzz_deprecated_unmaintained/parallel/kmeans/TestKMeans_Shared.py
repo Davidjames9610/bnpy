@@ -7,8 +7,8 @@ Classes
 SharedMemWorker : subclass of Process
     Defines work to be done by a single "worker" process
     which is created with references to shared read-only data
-    We assign this process "jobs" via a queue, and read its results
-    from a separate results queue.
+    We assign this process "jobs" via a queue, and read its synthetic_results
+    from a separate synthetic_results queue.
 
 Test : subclass of unittest.TestCase
     Defines a single problem to solve:
@@ -116,7 +116,7 @@ class Test(unittest.TestCase):
 
     def setUp(self):
         # Create a JobQ (to hold tasks to be done)
-        # and a ResultsQ (to hold results of completed tasks)
+        # and a ResultsQ (to hold synthetic_results of completed tasks)
         manager = multiprocessing.Manager()
         self.JobQ = manager.Queue()
         self.ResultQ = manager.Queue()
@@ -190,7 +190,7 @@ class Test(unittest.TestCase):
         self.JobQ.join()
 
         # REDUCE step
-        # Aggregate results across across all workers
+        # Aggregate synthetic_results across across all workers
         nDone = 0
         SS = 0
         while (nDone < self.nWorkers):
@@ -210,7 +210,7 @@ class Test(unittest.TestCase):
 
         No parallelization here.
         Just verifying that we can split computation up into >1 slice,
-        add up results from all slices and still get the same answer.
+        add up synthetic_results from all slices and still get the same answer.
         '''
         print('')
         SS1 = self.run_baseline()

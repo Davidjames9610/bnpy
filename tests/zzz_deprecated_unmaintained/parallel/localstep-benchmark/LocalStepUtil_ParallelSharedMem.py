@@ -27,7 +27,7 @@ def calcLocalParamsAndSummarize(
     JobQ.join()
 
     # REDUCE step
-    # Aggregate results across across all workers
+    # Aggregate synthetic_results across across all workers
     SS, telapsed_max = ResultQ.get()
     while not ResultQ.empty():
         SSslice, telapsed_cur = ResultQ.get()
@@ -46,7 +46,7 @@ def setUpWorkers(
     ResultQ
     '''
     # Create a JobQ (to hold tasks to be done)
-    # and a ResultsQ (to hold results of completed tasks)
+    # and a ResultsQ (to hold synthetic_results of completed tasks)
     manager = multiprocessing.Manager()
     JobQ = manager.Queue()
     ResultQ = manager.Queue()

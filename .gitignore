@@ -13,7 +13,7 @@ docs/source/modules/generated/
 #   (2) these files rarely mean anything to others except the person who ran the test
 dist/
 logs/
-results/
+examples/08_mocap6/synthetic_results/
 profiler/
 reports/
 build/

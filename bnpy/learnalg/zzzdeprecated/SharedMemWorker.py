@@ -7,8 +7,8 @@ Classes
 SharedMemWorker : subclass of Process
     Defines work to be done by a single "worker" process
     which is created with references to shared read-only data
-    We assign this process "jobs" via a queue, and read its results
-    from a separate results queue.
+    We assign this process "jobs" via a queue, and read its synthetic_results
+    from a separate synthetic_results queue.
 
 """
 

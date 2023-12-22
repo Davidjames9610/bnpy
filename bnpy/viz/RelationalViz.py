@@ -17,7 +17,7 @@ PlotUtil.ConfigPylabDefaults(pylab)
 
 def plotSingleJob(dataName, jobname, taskids='1', lap=None,
                   showELBOInTitle=True, cmap='gray', title='', mixZs=False):
-    ''' Visualize results of single run
+    ''' Visualize synthetic_results of single run
     '''
 
     # Parse the jobpath, and create example task paths

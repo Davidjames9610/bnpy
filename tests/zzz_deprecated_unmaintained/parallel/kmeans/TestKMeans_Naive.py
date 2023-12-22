@@ -5,8 +5,8 @@ Classes
 --------
 Worker : subclass of Process
     Defines work to be done by a single "worker" process.
-    We assign this process "jobs" via a queue, and read its results
-    from a separate results queue.
+    We assign this process "jobs" via a queue, and read its synthetic_results
+    from a separate synthetic_results queue.
     For each job, the worker reads data via inter-proc communication,
     and performs local step on a slice of the data.
 
@@ -103,7 +103,7 @@ class Test(unittest.TestCase):
 
     def setUp(self):
         # Create a JobQ (to hold tasks to be done)
-        # and a ResultsQ (to hold results of completed tasks)
+        # and a ResultsQ (to hold synthetic_results of completed tasks)
         manager = multiprocessing.Manager()
         self.JobQ = manager.Queue()
         self.ResultQ = manager.Queue()
@@ -160,7 +160,7 @@ class Test(unittest.TestCase):
         self.JobQ.join()
 
         # REDUCE step
-        # Aggregate results across across all workers
+        # Aggregate synthetic_results across across all workers
         SS = self.ResultQ.get()
         while not self.ResultQ.empty():
             SSchunk = self.ResultQ.get()
@@ -172,7 +172,7 @@ class Test(unittest.TestCase):
 
         No parallelization here.
         Just verifying that we can split computation up into >1 slice,
-        add up results from all slices and still get the same answer.
+        add up synthetic_results from all slices and still get the same answer.
         '''
         print('')
 

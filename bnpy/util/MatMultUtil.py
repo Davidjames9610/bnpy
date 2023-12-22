@@ -6,7 +6,7 @@ that make sure the best alignment and striding are used.
 
 Notes
 -------
-Timing results on several machines:
+Timing synthetic_results on several machines:
 - late 2011 macbook (with Intel CPU)
 - 32-bit desktop (with AMD CPU, ~3GHz)
 - 64-bit desktop (with AMD CPU, ~3GHz)

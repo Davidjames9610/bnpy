@@ -62,7 +62,7 @@ def runBenchmarkAcrossProblemSizes(TestClass):
 
     Post Condition
     --------
-    Speed tests are executed, and results are printed to std out.
+    Speed tests are executed, and synthetic_results are printed to std out.
     """
     import argparse
 
@@ -246,7 +246,7 @@ class Test(unittest.TestCase):
         ''' Launch pool of worker processes, with queues to communicate with.
         '''
         # Create a JobQ (to hold tasks to be done)
-        # and a ResultsQ (to hold results of completed tasks)
+        # and a ResultsQ (to hold synthetic_results of completed tasks)
         manager = multiprocessing.Manager()
         self.JobQ = manager.Queue()
         self.ResultQ = manager.Queue()
@@ -303,9 +303,9 @@ class Test(unittest.TestCase):
             self.JobQ.put((start, stop))
 
         # REDUCE!
-        # Aggregate results across across all workers
+        # Aggregate synthetic_results across across all workers
         # Avoids JobQueue.join() call (which blocks execution)
-        # Instead lets main process aggregate all results as they come in.
+        # Instead lets main process aggregate all synthetic_results as they come in.
         nTaskDone = 0
         while nTaskDone < self.nWorkers:
             if not self.ResultQ.empty():
@@ -323,7 +323,7 @@ class Test(unittest.TestCase):
 
         No parallelization here.
         Just verifying that we can split computation up into >1 slice,
-        add up results from all slices and still get the same answer.
+        add up synthetic_results from all slices and still get the same answer.
         '''
         print('')
         SSbase = self.run_baseline()

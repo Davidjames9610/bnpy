@@ -49,7 +49,7 @@ class ParallelVBAlg(LearnAlg):
         self.nDoc = Data.nDoc
         if isParallel:
             # Create a JobQ (to hold tasks to be done)
-            # and a ResultsQ (to hold results of completed tasks)
+            # and a ResultsQ (to hold synthetic_results of completed tasks)
             manager = multiprocessing.Manager()
             self.JobQ = manager.Queue()
             self.ResultQ = manager.Queue()
@@ -166,7 +166,7 @@ class ParallelVBAlg(LearnAlg):
         self.JobQ.join()
 
         # REDUCE!
-        # Aggregate results across across all workers
+        # Aggregate synthetic_results across across all workers
         SS = self.ResultQ.get()
         while not self.ResultQ.empty():
             SSchunk = self.ResultQ.get()

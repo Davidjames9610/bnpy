@@ -223,7 +223,7 @@ class ParallelMOVBAlg(MOVBAlg):
         self.JobQ.join()
 
         # Reduce step
-        # Aggregate results across across all workers
+        # Aggregate synthetic_results across across all workers
         SSwholebatch = self.ResultQ.get()
         while not self.ResultQ.empty():
             SSslice = self.ResultQ.get()
@@ -246,7 +246,7 @@ def setupQueuesAndWorkers(DataIterator, hmodel,
         Used for receiving SuffStatBags from workers
     '''
     # Create a JobQ (to hold tasks to be done)
-    # and a ResultsQ (to hold results of completed tasks)
+    # and a ResultsQ (to hold synthetic_results of completed tasks)
     manager = multiprocessing.Manager()
     JobQ = manager.Queue()
     ResultQ = manager.Queue()

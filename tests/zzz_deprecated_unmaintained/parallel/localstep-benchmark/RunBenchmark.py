@@ -17,7 +17,7 @@ def runBenchmark():
 
     Returns
     -------
-    TimeInfo : info about timing results.
+    TimeInfo : info about timing synthetic_results.
     """
     # Force only single thread to be used for BLAS/Linpack ops like 
     # matrix multiples, etc.

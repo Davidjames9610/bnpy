@@ -173,7 +173,7 @@ def makeFigure(**kwargs):
     LEGENDSIZE = 30
     LINEWIDTH = 4
 
-    # Plot the results
+    # Plot the synthetic_results
     figH = pylab.figure(figsize=(9.1, 6))
     axH = pylab.subplot(111)
     axH.set_position([xB, B, (1 - xB - b), (1 - B - b)])

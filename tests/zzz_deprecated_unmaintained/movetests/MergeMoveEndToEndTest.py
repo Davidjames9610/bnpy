@@ -163,7 +163,7 @@ class MergeMoveEndToEndTest(unittest.TestCase):
 
         Post Condition
         --------------
-        Will raise AssertionError if any bad results detected.
+        Will raise AssertionError if any bad synthetic_results detected.
         """
         Ktrue = self.Data.TrueParams['K']
         pprint(aArg)
@@ -205,7 +205,7 @@ class MergeMoveEndToEndTest(unittest.TestCase):
 
         Post Condition
         --------------
-        Will raise AssertionError if any bad results detected.
+        Will raise AssertionError if any bad synthetic_results detected.
         """
         self.Data.alwaysTrackTruth = 1
         Ktrue = np.unique(self.Data.TrueParams['Z']).size
@@ -252,7 +252,7 @@ class MergeMoveEndToEndTest(unittest.TestCase):
 
         Post Condition
         --------------
-        Will raise AssertionError if any bad results detected.
+        Will raise AssertionError if any bad synthetic_results detected.
         """
         if hasattr(self.Data, 'nDoc'):
             Data_n = self.Data.select_subset_by_mask(
@@ -448,7 +448,7 @@ class MergeMoveEndToEndTest(unittest.TestCase):
 
         Post Condition
         --------------
-        Will raise AssertionError if any bad results detected.
+        Will raise AssertionError if any bad synthetic_results detected.
         """
         print('')
         argDict = parseCmdLineArgs()

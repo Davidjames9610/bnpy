@@ -169,7 +169,7 @@ def runBenchmarkAcrossProblemSizes(TestClass):
 
     Post Condition
     --------
-    Speed tests are executed, and results are printed to std out.
+    Speed tests are executed, and synthetic_results are printed to std out.
     """
     import argparse
 

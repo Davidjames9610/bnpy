@@ -281,7 +281,7 @@ html_search_language = 'en'
 #html_search_options = {'type': 'default'}
 
 # The name of a javascript file (relative to the configuration directory) that
-# implements a search results scorer. If empty, the default will be used.
+# implements a search synthetic_results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.

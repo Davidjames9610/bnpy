@@ -9,7 +9,7 @@ def loadDataFromSavedTask(taskoutpath, dataSplitName='train', **kwargs):
 
     Args
     ----
-    taskoutpath : full path to saved results of bnpy training run
+    taskoutpath : full path to saved synthetic_results of bnpy training run
 
     Returns
     -------

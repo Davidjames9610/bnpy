@@ -153,7 +153,7 @@ def makeFigure(hmmKappa=0):
     # Make largest value the one with kempty=0, to make plot look good
     ELBOVals -= ELBOVals[0]
 
-    # Plot the results
+    # Plot the synthetic_results
     from matplotlib import pylab
     figH = pylab.figure(figsize=(6, 4))
     plotargs = dict(markersize=10, linewidth=3)

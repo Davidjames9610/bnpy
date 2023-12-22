@@ -48,7 +48,7 @@ def plotCompsFromHModel(hmodel, **kwargs):
 
 def plotCompsForTask(task_output_path, lap=None,
                      dataName=None, **kwargs):
-    ''' Show plot of learned clusters for single run of saved results on disk
+    ''' Show plot of learned clusters for single run of saved synthetic_results on disk
     '''
     # Verify given absolute path is valid.
     taskpath_originalarg = task_output_path
@@ -81,7 +81,7 @@ def plotCompsForTask(task_output_path, lap=None,
 
 def plotCompsForJob(jobpath='', taskids=[1], lap=None,
                     **kwargs):
-    ''' Show plot of learned clusters from run(s) saved results on disk
+    ''' Show plot of learned clusters from run(s) saved synthetic_results on disk
     '''
 
     # Verify given absolute path is valid.

@@ -110,7 +110,7 @@ def sparseLocalStep_WordCountData(
         reviseActiveEveryLP,
         verboseLP)
 
-    # Package results up into dict
+    # Package synthetic_results up into dict
     if not isinstance(LP, dict):
         LP = dict()
     LP['nnzPerRow'] = nnzPerRowLP
